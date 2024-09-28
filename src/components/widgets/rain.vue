@@ -1,7 +1,7 @@
 <template>
   <div
     ref="rainContainer"
-    class="relative h-screen w-screen overflow-hidden bg-black"
+    class="absolute h-screen w-screen overflow-hidden container"
   ></div>
 </template>
 
@@ -61,5 +61,9 @@ onMounted(() => {
   transform: rotate(30deg);
   background-color: rgba(255, 255, 255, 0.5);
   filter: blur(1px);
+}
+
+.container {
+  background-color: transparent;
 }
 </style>

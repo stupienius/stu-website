@@ -4,6 +4,7 @@ import Rain from "../widgets/rain.vue";
 </script>
 
 <template>
+   
   <Rain />
   <Selection />
 </template>
