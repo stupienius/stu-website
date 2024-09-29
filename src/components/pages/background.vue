@@ -31,7 +31,7 @@ const content = ref(
 
 @keyframes rolldown2 {
   from {
-    transfrom: translateY(-200%);
+    transform: translateY(-200%);
   }
   to {
     transform: translateY(-100%);
