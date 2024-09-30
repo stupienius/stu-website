@@ -1,6 +1,7 @@
 <script setup>
 import Rain from "../widgets/rain.vue";
 import Background from "./background.vue";
+import Arrawbutton from "../widgets/arrawbutton.vue";
 </script>
 
 <template>
@@ -26,6 +27,11 @@ import Background from "./background.vue";
           STUPIENIUS NOX
         </h1>
       </div>
+    </div>
+    <div id="navigation" class="absolute bottom-0 flex flex-row gap-x-10">
+      <Arrawbutton rotate="200" />
+      <Arrawbutton rotate="180" />
+      <Arrawbutton rotate="160" />
     </div>
     <Rain class="top-0" />
   </div>
