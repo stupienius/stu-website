@@ -1,7 +1,7 @@
 <script setup>
 import Rain from "../widgets/rain.vue";
 import Background from "./background.vue";
-import Arrawbutton from "../widgets/arrawbutton.vue";
+import Arrowbutton from "../widgets/arrowbutton.vue";
 </script>
 
 <template>
@@ -28,10 +28,13 @@ import Arrawbutton from "../widgets/arrawbutton.vue";
         </h1>
       </div>
     </div>
-    <div id="navigation" class="absolute bottom-0 flex flex-row gap-x-10">
-      <Arrawbutton rotate="200" />
-      <Arrawbutton rotate="180" />
-      <Arrawbutton rotate="160" />
+    <div
+      id="navigation"
+      class="absolute bottom-8 z-30 flex flex-row items-end gap-x-10"
+    >
+      <Arrowbutton rotate="200" popup="me" />
+      <Arrowbutton rotate="180" popup="blog" />
+      <Arrowbutton rotate="160" popup="skill" />
     </div>
     <Rain class="top-0" />
   </div>

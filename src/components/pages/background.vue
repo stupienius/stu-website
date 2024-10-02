@@ -1,9 +1,9 @@
 <template>
   <div id="background" class="w-100 absolute h-screen overflow-hidden">
-    <p class="phar1 text-center font-mawn text-4xl text-gray-950">
+    <p class="phar1 text-center font-mawn text-4xl text-zinc-950">
       {{ content }}
     </p>
-    <p class="phar2 text-center font-mawn text-4xl text-gray-950">
+    <p class="phar2 text-center font-mawn text-4xl text-zinc-950">
       {{ content }}
     </p>
   </div>
