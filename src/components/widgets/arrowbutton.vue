@@ -2,12 +2,14 @@
   <button
     id="arrowbutton"
     class="group flex h-20 flex-col items-center justify-end"
+    @click="navigate2"
   >
     <div
+      ref="pop"
       id="popup"
-      class="hidden h-8 w-32 rounded-lg bg-stone-600 text-center font-maamli text-lg text-rose-400 backdrop-blur-lg group-hover:block group-hover:animate-showPopup"
+      class="h-8 w-32 animate-hidePopup rounded-lg bg-stone-600 text-center font-maamli text-lg text-rose-400 backdrop-blur-lg group-hover:animate-showPopup"
     >
-      <P> {{ popup }} </P>
+      <p>{{ popup }}</p>
     </div>
     <div :style="{ transform: `rotate(${props.rotate}deg)` }">
       <div
@@ -22,27 +24,26 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
+import eventBus from "../../utils/eventBus";
 
 const props = defineProps({ rotate: String, popup: String });
+const pop = ref(null);
 const arrow = ref(null);
 
-onMounted(() => {
-  arrow.value.style.transform = `rotate(${props.rotate}deg)`;
-});
-</script>
-<style>
-@keyframes appear {
-  0% {
-    opacity: 0;
-    transform: translateY(20px); /* Start from below and zoomed in */
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0); /* End at normal size */
-  }
+function navigate2() {
+  eventBus.emit("navigate", props.popup);
+  console.log("hello");
 }
 
-.popupAnimatioin {
-  animation: appear 0.25s linear forwards;
-}
-</style>
+onMounted(() => {
+  //rotate wound'nt be affected by animatin
+  arrow.value.style.transform = `rotate(${props.rotate}deg)`;
+
+  //stop the first animation
+  pop.value.style.visibility = "hidden";
+  setTimeout(() => {
+    pop.value.style.visibility = "visible";
+  }, 1000);
+});
+</script>
+<style></style>

@@ -1,6 +1,6 @@
 <script setup>
 import Rain from "../widgets/rain.vue";
-import Background from "./background.vue";
+import Background from "../widgets//background.vue";
 import Arrowbutton from "../widgets/arrowbutton.vue";
 </script>
 
@@ -12,17 +12,19 @@ import Arrowbutton from "../widgets/arrowbutton.vue";
     <Background class="top-0 z-0" />
     <div
       id="baner"
-      class="relative z-10 flex h-1/3 w-screen flex-col items-center justify-center"
+      class="h-45 relative z-10 flex w-screen flex-col items-center justify-center gap-y-2"
     >
-      <p class="text-md font-medium text-yellow-700">hello I'm</p>
-      <div class="static h-16 w-screen items-center" id="name">
+      <p class="text-md h-8 font-maamli text-lg font-medium text-yellow-700">
+        hello I'm
+      </p>
+      <div class="static h-32 w-screen" id="name">
         <h1
-          class="absolute bottom-0 right-0 w-screen text-center font-bubblegum text-9xl font-black text-yellow-700 text-shadow-lg"
+          class="absolute bottom-0 right-0 w-screen text-center font-bubblegum text-9xl font-black text-yellow-700 text-shadow-md"
         >
           STUPIENIUS NOX
         </h1>
         <h1
-          class="absolute bottom-2 right-2 w-screen text-center font-bubblegum text-9xl font-black text-yellow-500 text-shadow-lg"
+          class="absolute bottom-2 right-2 w-screen text-center font-bubblegum text-9xl font-black text-yellow-500"
         >
           STUPIENIUS NOX
         </h1>
