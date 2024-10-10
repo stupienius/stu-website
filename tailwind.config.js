@@ -30,8 +30,8 @@ export default {
         hidePopup: "disappear 0.75s ease-out forwards",
       },
       fontFamily: {
-        bubblegum: "Bubblegum Sans",
-        maamli: "Ga Maamli",
+        bubblegum: "bubblegum",
+        maamli: "maamli",
         mawn: "mawn",
       },
       boxShadow: {

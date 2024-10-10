@@ -19,12 +19,14 @@ import Arrowbutton from "../widgets/arrowbutton.vue";
       </p>
       <div class="static h-32 w-screen" id="name">
         <h1
-          class="absolute bottom-0 right-0 w-screen text-center font-bubblegum text-9xl font-black text-yellow-700 text-shadow-md"
+          id="dark"
+          class="absolute bottom-0 right-0 w-screen text-center font-bubblegum text-9xl font-black text-yellow-700 "
         >
           STUPIENIUS NOX
         </h1>
         <h1
-          class="absolute bottom-2 right-2 w-screen text-center font-bubblegum text-9xl font-black text-yellow-500"
+          id="bright"
+          class="absolute bottom-2 right-2 w-screen text-center font-bubblegum text-9xl font-black text-yellow-600"
         >
           STUPIENIUS NOX
         </h1>
@@ -32,7 +34,7 @@ import Arrowbutton from "../widgets/arrowbutton.vue";
     </div>
     <div
       id="navigation"
-      class="absolute bottom-8 z-30 flex flex-row items-end gap-x-10"
+      class="absolute bottom-2 z-30 flex flex-row items-end gap-x-10"
     >
       <Arrowbutton rotate="200" popup="me" />
       <Arrowbutton rotate="180" popup="blog" />
@@ -41,3 +43,9 @@ import Arrowbutton from "../widgets/arrowbutton.vue";
     <Rain class="top-0" />
   </div>
 </template>
+
+<style>
+#dark{
+  text-shadow: 2px 2px 1000px yellow;
+}
+</style>

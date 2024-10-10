@@ -1,7 +1,7 @@
 <template>
   <button
     id="arrowbutton"
-    class="group flex h-20 flex-col items-center justify-end"
+    class="group flex h-24 flex-col items-center justify-center"
     @click="navigate2"
   >
     <div

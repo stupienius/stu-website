@@ -1,11 +1,21 @@
-@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Ga+Maamli&display=swap");
 @font-face {
   font-family: "mawn";
   src:
-    url("../public/fonts/MAWNS' Graffiti Filled.ttf") format("truetype"),
-    url("../public/fonts/MAWNSGraffiti.woff2") format("woff2"),
-    url("../public/fonts/MAWNSGraffiti.woff") format("woff");
+    url("../public/fonts/mawn/MAWNS' Graffiti Filled.ttf") format("truetype"),
+    url("../public/fonts/mawn/MAWNSGraffiti.woff2") format("woff2"),
+    url("../public/fonts/mawn/MAWNSGraffiti.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face{
+  font-family: "bubblegum";
+  src: url("../public/fonts/bubblegum/BubblegumSans-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face{
+  font-family: "maamli";
+  src: url("../public/fonts/maamli/GaMaamli-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
