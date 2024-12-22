@@ -21,7 +21,7 @@
 
   function greeterOut(){
     console.log(greeter.value.$el.style.top);
-    greeter.value.$el.style.top = "100vh";
+    greeter.value.$el.style.top = "-100vh";
   }
 
   eventBus.on("navigate",e => {
