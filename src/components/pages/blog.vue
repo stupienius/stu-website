@@ -1,5 +1,5 @@
 <template>
-  <div id="blog" class="w-screen h-screen">
+  <div id="blog" class="w-screen h-screen absolute">
     <h1>this in blog</h1>
   </div>
 </template>

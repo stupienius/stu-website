@@ -2,9 +2,9 @@
   <div id="app" class="overflow-hidden">
     <Greeter  ref="greeter" />
     <main  class="w-[200vw] h-screen flex flex-row gap-[-12rem]">
-      <Me />
-      <Blog />
-      <Skill />
+      <Me ref="me" />
+      <Blog ref="blog" />
+      <Skill ref="skill" />
     </main>
   </div>
 </template>
@@ -18,15 +18,25 @@
   import eventBus from "./utils/eventBus";
 
   const greeter = ref(null);
+  const me = ref(null);
+  const blog = ref(null);
+  const skill = ref(null);
 
-  function greeterOut(){
-    console.log(greeter.value.$el.style.top);
-    greeter.value.$el.style.top = "-100vh";
-  }
 
   eventBus.on("navigate",e => {
-    greeterOut();
+    greeter.value.$el.style.top = "-100vh";
+    me.value.$el.style.top = "-100vh";
+    blog.value.$el.style.top = "-100vh";
+    skill.value.$el.style.top = "-100vh";
+      if(e === "me"){
+        me.value.$el.style.top = "0";
+      }else if(e === "blog"){
+        blog.value.$el.style.top = "0";
+      }else if(e === "skill"){
+        skill.value.$el.style.top = "0";
+      }else{
+        greeter.value.$el.style.top = "0";
+      }
   })
 
 </script>
-
