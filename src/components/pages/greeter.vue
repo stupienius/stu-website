@@ -46,6 +46,6 @@ import Arrowbutton from "../widgets/arrowbutton.vue";
 
 <style>
 #dark{
-  text-shadow: 2px 2px 1000px yellow;
+  text-shadow: 0 0 1000px yellow;
 }
 </style>
