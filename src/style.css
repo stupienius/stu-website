@@ -7,13 +7,14 @@
   font-weight: normal;
   font-style: normal;
 }
-@font-face{
+@font-face {
   font-family: "bubblegum";
-  src: url("../public/fonts/bubblegum/BubblegumSans-Regular.ttf") format("truetype");
+  src: url("../public/fonts/bubblegum/BubblegumSans-Regular.ttf")
+    format("truetype");
   font-weight: normal;
   font-style: normal;
 }
-@font-face{
+@font-face {
   font-family: "maamli";
   src: url("../public/fonts/maamli/GaMaamli-Regular.ttf") format("truetype");
   font-weight: normal;

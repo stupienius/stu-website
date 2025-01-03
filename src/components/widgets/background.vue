@@ -1,11 +1,11 @@
 <template>
   <div id="background" class="w-100 absolute h-screen overflow-hidden">
-    <p class="phar1 text-center px-4  font-mawn text-5xl text-[#070707]">
+    <p class="phar1 px-4 text-center font-mawn text-5xl text-[#070707]">
       {{ content }}
     </p>
-    <p class="phar2 text-center px-4  font-mawn text-5xl text-[#070707]">
+    <p class="phar2 px-4 text-center font-mawn text-5xl text-[#070707]">
       {{ content }}
-      <br>
+      <br />
     </p>
   </div>
 </template>

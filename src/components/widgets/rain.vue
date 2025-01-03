@@ -1,7 +1,7 @@
 <template>
   <div
     ref="rainContainer"
-    class="absolute h-screen w-screen overflow-hidden container"
+    class="container absolute h-screen w-screen overflow-hidden"
   ></div>
 </template>
 

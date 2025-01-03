@@ -1,5 +1,5 @@
 <template>
-  <div id="me" class="w-screen h-screen absolute">
+  <div id="me" class="absolute h-screen w-screen">
     <h1>hi I'm stupeinius Nox</h1>
   </div>
 </template>

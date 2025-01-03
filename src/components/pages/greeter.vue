@@ -20,7 +20,7 @@ import Arrowbutton from "../widgets/arrowbutton.vue";
       <div class="static h-32 w-screen" id="name">
         <h1
           id="dark"
-          class="absolute bottom-0 right-0 w-screen text-center font-bubblegum text-9xl font-black text-yellow-700 "
+          class="absolute bottom-0 right-0 w-screen text-center font-bubblegum text-9xl font-black text-yellow-700"
         >
           STUPIENIUS NOX
         </h1>
@@ -45,7 +45,7 @@ import Arrowbutton from "../widgets/arrowbutton.vue";
 </template>
 
 <style>
-#dark{
+#dark {
   text-shadow: 0 0 1000px yellow;
 }
 </style>
