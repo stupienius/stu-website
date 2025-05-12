@@ -33,6 +33,8 @@ export default {
         bubblegum: "bubblegum",
         maamli: "maamli",
         mawn: "mawn",
+        cascadia: "cascadia",
+        chinese: "chinese-font",
       },
       boxShadow: {
         around: "0 0 5px 10px #ffaa00",
