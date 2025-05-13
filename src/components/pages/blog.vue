@@ -1,6 +1,9 @@
 <template>
-  <div id="blog" class="absolute h-screen w-screen bg-violet-200 font-chinese">
-    <h1>this in blog</h1>
+  <div
+    id="blog"
+    class="bsolute h-screen w-screen bg-[#0e0a03] font-chinese text-[#9a8031]"
+  >
+    <h1>this is blog</h1>
     <FirstBlog class="p-9" />
   </div>
 </template>

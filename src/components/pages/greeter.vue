@@ -14,19 +14,21 @@ import Arrowbutton from "../widgets/arrowbutton.vue";
       id="baner"
       class="h-45 relative z-10 flex w-screen flex-col items-center justify-center gap-y-2"
     >
-      <p class="text-md h-8 font-maamli text-lg font-medium text-yellow-700">
+      <p
+        class="text-md h-8 select-none font-maamli text-lg font-medium text-yellow-700"
+      >
         hello I'm
       </p>
       <div class="static h-32 w-screen" id="name">
         <h1
           id="dark"
-          class="absolute bottom-0 right-0 w-screen text-center font-bubblegum text-9xl font-black text-yellow-700"
+          class="absolute bottom-0 right-0 w-screen select-none text-center font-bubblegum text-9xl font-black text-yellow-700"
         >
           STUPIENIUS NOX
         </h1>
         <h1
           id="bright"
-          class="absolute bottom-2 right-2 w-screen text-center font-bubblegum text-9xl font-black text-yellow-600"
+          class="absolute bottom-2 right-2 w-screen select-none text-center font-bubblegum text-9xl font-black text-yellow-600"
         >
           STUPIENIUS NOX
         </h1>

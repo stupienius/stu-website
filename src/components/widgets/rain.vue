@@ -6,7 +6,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, onUnmounted } from "vue";
 
 const rainContainer = ref(null);
 
@@ -41,8 +41,14 @@ const startRain = () => {
   }
 };
 
+let intervalId = null;
+
 onMounted(() => {
-  setInterval(startRain, 1000);
+  intervalId = setInterval(startRain, 1000);
+});
+
+onUnmounted(() => {
+  clearInterval(intervalId);
 });
 </script>
 
@@ -51,6 +57,7 @@ onMounted(() => {
   from {
     transform: translateY(-12px) translateX(0) rotate(50deg);
   }
+
   to {
     transform: translateY(100vh) translateX(-1000px) rotate(50deg);
   }

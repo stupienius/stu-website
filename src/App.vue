@@ -1,40 +1,84 @@
+<script setup></script>
+
 <template>
-  <div id="app" class="overflow-hidden">
-    <Greeter ref="greeter" />
-    <main class="flex h-screen w-[200vw] flex-row gap-[-12rem]">
-      <Me ref="me" />
-      <Blog ref="blog" />
-      <Skill ref="skill" />
-    </main>
+  <div id="app" class="overflow-hidden bg-stone-900">
+    <transition name="glitch" mode="out-in">
+      <router-view />
+    </transition>
   </div>
 </template>
 
-<script setup>
-import { ref } from "vue";
-import Greeter from "./components/pages/greeter.vue";
-import Me from "./components/pages/me.vue";
-import Blog from "./components/pages/blog.vue";
-import Skill from "./components/pages/skill.vue";
-import eventBus from "./utils/eventBus";
+<style scoped>
+.glitch-enter-active,
+.glitch-leave-active {
+  animation: glitchIn 0.5s ease;
+  position: relative;
+}
 
-const greeter = ref(null);
-const me = ref(null);
-const blog = ref(null);
-const skill = ref(null);
+.glitch-leave-active {
+  animation: glitchOut 0.5s ease;
+}
 
-eventBus.on("navigate", (e) => {
-  greeter.value.$el.style.top = "-100vh";
-  me.value.$el.style.top = "-100vh";
-  blog.value.$el.style.top = "-100vh";
-  skill.value.$el.style.top = "-100vh";
-  if (e === "me") {
-    me.value.$el.style.top = "0";
-  } else if (e === "blog") {
-    blog.value.$el.style.top = "0";
-  } else if (e === "skill") {
-    skill.value.$el.style.top = "0";
-  } else {
-    greeter.value.$el.style.top = "0";
+@keyframes glitchIn {
+  0% {
+    transform: translate(0);
+    opacity: 0;
   }
-});
-</script>
+
+  20% {
+    transform: translate(-2px, 2px);
+    opacity: 0.4;
+  }
+
+  40% {
+    transform: translate(2px, -2px);
+    opacity: 0.6;
+  }
+
+  60% {
+    transform: translate(-1px, 1px);
+    opacity: 0.8;
+  }
+
+  80% {
+    transform: translate(1px, -1px);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(0);
+  }
+}
+
+@keyframes glitchOut {
+  0% {
+    transform: translate(0);
+    opacity: 1;
+  }
+
+  20% {
+    transform: translate(1px, -1px);
+    opacity: 0.8;
+  }
+
+  40% {
+    transform: translate(-1px, 1px);
+    opacity: 0.6;
+  }
+
+  60% {
+    transform: translate(2px, -2px);
+    opacity: 0.4;
+  }
+
+  80% {
+    transform: translate(-2px, 2px);
+    opacity: 0.2;
+  }
+
+  100% {
+    transform: translate(0);
+    opacity: 0;
+  }
+}
+</style>

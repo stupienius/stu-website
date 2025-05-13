@@ -1,9 +1,13 @@
 <template>
   <div id="background" class="w-100 absolute h-screen overflow-hidden">
-    <p class="phar1 px-4 text-center font-mawn text-5xl text-[#070707]">
+    <p
+      class="phar1 select-none px-4 text-center font-mawn text-5xl text-[#070707]"
+    >
       {{ content }}
     </p>
-    <p class="phar2 px-4 text-center font-mawn text-5xl text-[#070707]">
+    <p
+      class="phar2 select-none px-4 text-center font-mawn text-5xl text-[#070707]"
+    >
       {{ content }}
       <br />
     </p>
@@ -22,6 +26,7 @@ const content = ref(
   from {
     transfrom: translateY(-100%);
   }
+
   to {
     transform: translateY(0%);
   }
@@ -37,6 +42,7 @@ const content = ref(
   from {
     transform: translateY(-100%);
   }
+
   to {
     transform: translateY(0%);
   }

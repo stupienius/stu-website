@@ -24,15 +24,15 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
-import eventBus from "../../utils/eventBus";
+import { useRouter } from "vue-router";
 
 const props = defineProps({ rotate: String, popup: String });
 const pop = ref(null);
 const arrow = ref(null);
+const router = useRouter();
 
 function navigate2() {
-  eventBus.emit("navigate", props.popup);
-  console.log("hello");
+  router.push(`/${props.popup.toLowerCase()}`);
 }
 
 onMounted(() => {
