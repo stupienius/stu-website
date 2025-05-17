@@ -1,5 +1,7 @@
 ---
-title: this is for the test
+title: first blog
+subtitle: this if for the test
+data: 2025-5-17
 ---
 
 # Hi, I am stupienius, this is my blog

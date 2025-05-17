@@ -1,84 +1,40 @@
-<script setup></script>
-
 <template>
-  <div id="app" class="overflow-hidden bg-stone-900">
-    <transition name="glitch" mode="out-in">
-      <router-view />
-    </transition>
+  <div id="app" class="bg-stone-950">
+    <router-view v-slot="{ Component }">
+      <transition name="slide" mode="out-in" v-if="hasMounted">
+        <component :key="router.fullPath" :is="Component" />
+      </transition>
+    </router-view>
   </div>
 </template>
 
+<script setup>
+import { ref, onMounted } from "vue";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+const hasMounted = ref(false);
+
+onMounted(() => {
+  setTimeout(() => {
+    hasMounted.value = true;
+  }, 200);
+});
+</script>
+
 <style scoped>
-.glitch-enter-active,
-.glitch-leave-active {
-  animation: glitchIn 0.5s ease;
-  position: relative;
+.slide-enter-active,
+.slide-leave-active {
+  transition: all 0.8s ease;
 }
 
-.glitch-leave-active {
-  animation: glitchOut 0.5s ease;
+.slide-enter-from {
+  transform: translateY(100%);
+  opacity: 0;
 }
 
-@keyframes glitchIn {
-  0% {
-    transform: translate(0);
-    opacity: 0;
-  }
-
-  20% {
-    transform: translate(-2px, 2px);
-    opacity: 0.4;
-  }
-
-  40% {
-    transform: translate(2px, -2px);
-    opacity: 0.6;
-  }
-
-  60% {
-    transform: translate(-1px, 1px);
-    opacity: 0.8;
-  }
-
-  80% {
-    transform: translate(1px, -1px);
-    opacity: 1;
-  }
-
-  100% {
-    transform: translate(0);
-  }
-}
-
-@keyframes glitchOut {
-  0% {
-    transform: translate(0);
-    opacity: 1;
-  }
-
-  20% {
-    transform: translate(1px, -1px);
-    opacity: 0.8;
-  }
-
-  40% {
-    transform: translate(-1px, 1px);
-    opacity: 0.6;
-  }
-
-  60% {
-    transform: translate(2px, -2px);
-    opacity: 0.4;
-  }
-
-  80% {
-    transform: translate(-2px, 2px);
-    opacity: 0.2;
-  }
-
-  100% {
-    transform: translate(0);
-    opacity: 0;
-  }
+.slide-leave-to {
+  transform: translateY(-100%);
+  opacity: 0;
 }
 </style>
