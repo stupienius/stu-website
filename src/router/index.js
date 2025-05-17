@@ -1,7 +1,7 @@
 import Greeter from "../components/pages/greeter.vue";
 import Me from "../components/pages/me.vue";
 import BlogIndex from "../components/pages/blogIndex.vue";
-import Blog from "../components/pages/blog.vue"
+import Blog from "../components/pages/blog.vue";
 import Skill from "../components/pages/skill.vue";
 import { createWebHistory, createRouter } from "vue-router";
 
