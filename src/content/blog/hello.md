@@ -1,7 +1,7 @@
 ---
 title: hello
 subtitle: hello from stupienius
-data: 2008-04-01
+date: 2008-4-1
 ---
 
 # hi im stupienius

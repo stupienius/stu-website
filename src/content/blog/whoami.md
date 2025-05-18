@@ -1,7 +1,7 @@
 ---
 title: whoami
-subsitle: so who am i
-data: 2000-2-38
+subtitle: so who am i
+date: 2000-2-38
 ---
 
 # hahah

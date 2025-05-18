@@ -1,7 +1,7 @@
 ---
 title: test
 subtitle: for the test
-data: 114-5-14
+date: 114-5-14
 ---
 
 # hello
