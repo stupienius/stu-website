@@ -37,4 +37,16 @@ onMounted(() => {
   transform: translateY(-100%);
   opacity: 0;
 }
+
+* {
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* Internet Explorer 10+ */
+}
+
+*::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari, Opera */
+}
 </style>

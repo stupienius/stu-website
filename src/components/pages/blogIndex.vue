@@ -23,13 +23,18 @@
         <div id="blogList">
           <ul class="flex w-screen flex-col items-center justify-center">
             <li v-for="post in blogIndex" :key="post.slug"
-              class="m-3 w-[60%] list-none rounded-lg bg-[#61677A7f] p-3 px-5 transition-all duration-500 ease-in hover:bg-yellow-500 hover:text-orange-950">
-              <RouterLink :to="`/blog/${post.slug}`">
-                <div id="title" class="font-maamli text-[3rem]">
+              class="m-3 flex w-[60%] list-none rounded-lg bg-[#61677A7f] p-3 px-5 transition-all duration-500 ease-in hover:bg-yellow-500 hover:text-orange-950">
+              <RouterLink :to="`/blog/${post.slug}`" class="flex size-full flex-col gap-3">
+                <div id="title" class="mb-[-20px] font-maamli text-[3rem]">
                   {{ post.title }}
                 </div>
                 <div id="subtitle">{{ post.subtitle }}</div>
-                <div id="time">{{ post.date }}</div>
+                <div id="tags" class="flex flex-row gap-3 overflow-x-auto">
+                  <div v-for="tag in post.tags" :key="tag"
+                    class="inline-block h-auto w-auto text-nowrap rounded-xl bg-[#D8D9DA77] p-0 px-3 text-sm text-gray-800">
+                    {{ tag }}
+                  </div>
+                </div>
               </RouterLink>
             </li>
           </ul>
@@ -43,8 +48,8 @@
 import { ref, onMounted, onUnmounted } from "vue";
 import { blogIndex } from "../../utils/blogLoader.js";
 
-const rows = 35;
-const cols = 50;
+const rows = 100;
+const cols = 100;
 
 const binaryGrid = ref([]);
 const binaryString = ref("");

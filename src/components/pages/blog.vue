@@ -9,6 +9,12 @@
     <main class="flex justify-center">
       <div id="sidebar" class="w-auto bg-slate-50"></div>
       <div id="blog-content" class="w-[70vw] rounded-xl bg-[#171819] p-6 text-[#ffffff88] shadow-black">
+        <div id="tags" class="m-3 mb-7 flex flex-row gap-3 overflow-x-auto">
+          <div v-for="tag in tags" :key="tag"
+            class="inline-block h-auto w-auto text-nowrap rounded-xl bg-[#D8D9DA77] p-1 text-gray-800">
+            {{ tag }}
+          </div>
+        </div>
         <div v-if="PostComponent">
           <component :is="PostComponent" />
         </div>
@@ -28,6 +34,7 @@ import { computed, ref } from "vue";
 const title = ref(null);
 const subtitle = ref(null);
 const time = ref(null);
+const tags = ref(null);
 
 const route = useRoute();
 const slug = route.params.title;
@@ -48,6 +55,7 @@ if (PostComponent) {
   title.value = posts[slug].frontmatter.title.toUpperCase();
   subtitle.value = posts[slug].frontmatter.subtitle;
   time.value = posts[slug].frontmatter.date;
+  tags.value = posts[slug].frontmatter.tags;
 }
 </script>
 
@@ -60,11 +68,17 @@ if (PostComponent) {
 }
 
 h1 {
-  font-size: 1.6rem;
+  font-size: 2.4rem;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 li {
   list-style-type: circle;
   list-style-position: inside;
+}
+
+#tags::-webkit-scrollbar {
+  display: none;
 }
 </style>

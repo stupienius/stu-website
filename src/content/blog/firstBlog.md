@@ -2,6 +2,7 @@
 title: first blog
 subtitle: this if for the test
 date: 2025-5-17
+tags: [first, hello, second, cin, cout, print, hello world, how are you]
 ---
 
 # Hi, I am stupienius, this is my blog
