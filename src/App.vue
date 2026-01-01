@@ -1,17 +1,36 @@
 <template>
   <div id="app" class="app-root">
     <!-- SVG Glitch Filter -->
-    <svg style="position: absolute; width: 0; height: 0; pointer-events: none" aria-hidden="true">
+    <svg
+      style="position: absolute; width: 0; height: 0; pointer-events: none"
+      aria-hidden="true"
+    >
       <filter id="glitch">
-        <feTurbulence id="glitch-noise" type="fractalNoise" baseFrequency="0.002 0.8" numOctaves="2" seed="2"
-          result="noise" />
-        <feDisplacementMap in="SourceGraphic" in2="noise" scale="40" xChannelSelector="R" yChannelSelector="G" />
+        <feTurbulence
+          id="glitch-noise"
+          type="fractalNoise"
+          baseFrequency="0.002 0.8"
+          numOctaves="2"
+          seed="2"
+          result="noise"
+        />
+        <feDisplacementMap
+          in="SourceGraphic"
+          in2="noise"
+          scale="40"
+          xChannelSelector="R"
+          yChannelSelector="G"
+        />
       </filter>
     </svg>
 
     <!-- Router Transition -->
     <router-view v-slot="{ Component }">
-      <transition name="cyber-glitch" mode="out-in">
+      <transition
+        name="cyber-glitch"
+        mode="out-in"
+        @before-leave="updateGlitchEffect"
+      >
         <component :is="Component" :key="$route.fullPath" class="glitch-page" />
       </transition>
     </router-view>
@@ -25,6 +44,26 @@ import { useRoute } from "vue-router";
 const route = useRoute();
 
 /* 每次切換路由，隨機 glitch 形狀 */
+
+const updateGlitchEffect = () => {
+  const noise = document.getElementById("glitch-noise");
+  if (noise) {
+    noise.setAttribute("seed", Math.floor(Math.random() * 1000));
+  }
+
+  const root = document.documentElement;
+  for (let i = 1; i <= 5; i++) {
+    const top = Math.floor(Math.random() * 70);
+    const height = Math.floor(Math.random() * 15 + 5);
+    const bottom = 100 - top - height;
+    const move = Math.floor(Math.random() * 100 - 50);
+
+    root.style.setProperty(`--t${i}`, `${top}%`);
+    root.style.setProperty(`--b${i}`, `${bottom}%`);
+    root.style.setProperty(`--m${i}`, `${move}px`);
+  }
+};
+
 watch(
   () => route.fullPath,
   () => {
@@ -54,7 +93,7 @@ watch(
 /* ===== 進場 ===== */
 
 .cyber-glitch-enter-active {
-  animation: glitch-in 0.25s ease-out;
+  animation: glitch-in 0.15s ease-out;
 }
 
 @keyframes glitch-in {
@@ -108,24 +147,30 @@ watch(
     transform: translateX(0);
   }
 
-  20% {
-    clip-path: inset(12% 0 78% 0);
-    transform: translateX(-30px);
+  16% {
+    /* 使用 JS 傳進來的隨機值 */
+    clip-path: inset(var(--t1) 0 var(--b1) 0);
+    transform: translateX(var(--m1));
   }
 
-  40% {
-    clip-path: inset(38% 0 42% 0);
-    transform: translateX(40px);
+  33% {
+    clip-path: inset(var(--t2) 0 var(--b2) 0);
+    transform: translateX(var(--m2));
   }
 
-  60% {
-    clip-path: inset(68% 0 22% 0);
-    transform: translateX(-25px);
+  50% {
+    clip-path: inset(var(--t3) 0 var(--b3) 0);
+    transform: translateX(var(--m3));
   }
 
-  80% {
-    clip-path: inset(20% 0 65% 0);
-    transform: translateX(20px);
+  66% {
+    clip-path: inset(var(--t4) 0 var(--b4) 0);
+    transform: translateX(var(--m4));
+  }
+
+  82% {
+    clip-path: inset(var(--t5) 0 var(--b5) 0);
+    transform: translateX(var(--m5));
   }
 
   100% {
@@ -166,7 +211,7 @@ watch(
 }
 
 /* ===== VHS 掃描線（可移除） ===== */
-
+/*
 .glitch-page::after {
   content: "";
   position: fixed;
@@ -178,7 +223,7 @@ watch(
       transparent 4px);
   pointer-events: none;
   z-index: 50;
-}
+}*/
 
 /* ===== 隱藏捲軸 ===== */
 

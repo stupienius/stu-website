@@ -1,12 +1,9 @@
 ---
 title: hello
-subtitle: hello from stupienius
-date: 2008-4-1
+subtitle: hello world
+time: 2008-04-01
 ---
 
-# hi im stupienius
+# wow, so amazing
 
-_I,m_
-
-- a student
-- a hight school student
+This is a blog writed when i was born.

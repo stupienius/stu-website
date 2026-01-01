@@ -1,7 +1,9 @@
 ---
 title: whoami
 subtitle: so who am i
-date: 2000-2-38
+time: 3000-02-03
 ---
 
-# hahah
+# SO WHO AM I
+
+Look at the data, evidently, I'm human who from future.
