@@ -210,21 +210,6 @@ watch(
   }
 }
 
-/* ===== VHS 掃描線（可移除） ===== */
-/*
-.glitch-page::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: repeating-linear-gradient(to bottom,
-      rgba(255, 255, 255, 0.03) 0,
-      rgba(255, 255, 255, 0.03) 1px,
-      transparent 2px,
-      transparent 4px);
-  pointer-events: none;
-  z-index: 50;
-}*/
-
 /* ===== 隱藏捲軸 ===== */
 
 * {
